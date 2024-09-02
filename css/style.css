@@ -1,0 +1,236 @@
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+@font-face {
+  font-family: "Promise"; /* 원하는 폰트 이름 */
+  src: url("Promise.ttf") format("truetype"); /* ttf 형식 */
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+section:nth-child(2n + 1) {
+  background-color: gray;
+}
+/* Mobile 모드 메뉴 */
+header {
+  background-color: #293847;
+}
+header nav {
+  width: 100%;
+  position: fixed;
+  /* 위치를 절대값으로 고정 */
+  bottom: 0;
+}
+
+header > nav > ul > li {
+  background-color: #34425c;
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+header > nav > ul > li > a {
+  line-height: 60px;
+  color: #eeeeeea1;
+  line-height: 50px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* 반응형웹 PC 모드_네비게이션 */
+@media screen and (min-width: 768px) {
+  header > nav {
+    width: 130px;
+    padding: 10px;
+    background-color: #34425c;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+  }
+  header > nav > ul > li {
+    float: none;
+    width: 110px;
+    line-height: 70px;
+  }
+  header > nav > ul > li:first-child {
+    margin-top: 50px;
+  }
+  nav a#toggle {
+    display: none; /* PC 모드에서 토글 메뉴 숨김 */
+  }
+}
+
+/* 공통 섹션 */
+
+section .wrapper {
+  padding: 40px 0;
+}
+section:nth-child(2n + 1) {
+  background-color: #e3e3e4;
+}
+
+section .section_title {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* 메인 이미지 텍스트 */
+section#main_content {
+  text-align: center;
+}
+section#main_content .wrapper {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  font-family: "Promise", sans-serif; /* 기본 폰트 설정 */
+  font-size: 4em;
+  font-weight: bold;
+  line-height: 1.3em;
+  background: url(../images/main_image_1.jpg) center no-repeat;
+  background-size: cover; /* div 크기에 맞게 이미지 크기 조정 */
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    margin-left: 130px;
+  }
+  /* 모바일 모드가 아닐때만 각 섹션의 높이를 100% */
+  section {
+    height: 100vh;
+  }
+}
+
+/* 섹션2 About */
+section#about .section_contents {
+  padding: 20px 50px;
+}
+section#about .section_contents p {
+  color: #444;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+/* 섹션3 skills */
+section#skills .section_contents {
+  padding: 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress-bar {
+  background-color: #80afc2;
+  height: 100%;
+}
+
+.skills .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+/* 반응형웹 PC 모드 _ 섹션3 skills */
+@media screen and (min-width: 768px) {
+  section#skills .section_contents .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 교차축을 기준으로 하는 세로 가운데 배치 */
+  }
+  section#skills .section_contents .container .row {
+    margin: 20px;
+    width: 80%;
+    align-items: center; /* 교차축을 기준으로 하는 세로 가운데 배치 */
+  }
+}
+
+/* 섹션4 portfolio */
+section#portfolio .section_contents {
+  padding: 60px 40px;
+}
+section#portfolio div.program {
+  border: 1px solid #aaa;
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+section#portfolio div.program h4 {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+/* 반응형웹 PC 모드 _ 섹션4 portfolio : 플렉스 적용, 여러 항목 배치 */
+@media screen and (min-width: 768px) {
+  section#portfolio .section_contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  section#portfolio div.program {
+    width: 22%;
+  }
+}
+
+/* 푸터 모바일 모드 */
+footer {
+  background-color: #80afc2;
+  color: #fff;
+}
+footer .wrapper {
+  padding: 40px 20px 80px 20px;
+}
+footer article#contact p {
+  margin-bottom: 5px;
+}
+
+/* 반응형웹 PC 모드_푸터 */
+@media screen and (min-width: 768px) {
+  footer .wrapper {
+    padding: 40px 20px;
+  }
+}
+
+/* 페이지 Top 부분 */
+#top_btn {
+  display: none; /* 스크롤 되기 전에는 Top 버튼 숨기기 */
+  background: rgba(100, 100, 100, 0.3);
+  width: 80px;
+  text-align: center; /* 중간 정렬 */
+  position: fixed;
+  /* 위치를 절대값으로 고정 */
+  right: 0;
+  bottom: 150px;
+  transform: rotate(90deg);
+  border-radius: 10px;
+}
+#top_btn a {
+  color: #fff;
+}
+
+#top_btn:hover {
+  background: rgba(100, 100, 100, 0.6);
+  transition-duration: 0.5s;
+}
