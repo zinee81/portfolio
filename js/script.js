@@ -14,7 +14,7 @@
 // 글자를 보여줄 태그
 const textEl = document.getElementById("main_text");
 // 화면에 보여줄 문자열
-const text = "Front-end 개발자\n권혜진 입니다";
+const text = "Front end 개발자\n권혜진 입니다";
 // 문자열을 자를때 사용할 index값
 let idx = 0;
 // 문자열 변경 함수 생성
@@ -29,7 +29,7 @@ function writeText() {
     // idx에 1추가
     idx++;
     // 300밀리초 후에 다음 문자 출력
-    setTimeout(writeText, 300);
+    setTimeout(writeText, 200);
   } else {
     // 문자열이 모두 출력된 후 idx와 내용 초기화
     setTimeout(() => {
